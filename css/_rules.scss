@@ -1,0 +1,117 @@
+.container {
+    @media #{$small} {
+        min-width: 600px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    @media #{$mobile} {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    padding: 20px 20px;
+    background-color: $white;
+    border-radius: 6px;
+}
+.comment {
+    position: relative;
+    &::before {
+        content: "";
+        width: 2px;
+        background-color: #8d8a8a;
+        left: 25px;
+        top: 60px;
+        position: absolute;
+    }
+    &.first-comment {
+        &::before {
+            height: 87%;
+        }
+    }
+    &.second-comment {
+        &::before {
+            height: 79%;
+        }
+    }
+    &.third-comment {
+        &::before {
+            height: 35%;
+        }
+    }
+    &.fourth-comment {
+        &::before {
+            height: 35%;
+        }
+    }
+    &.reply {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-left: 65px;
+    }
+
+   .avatar {
+        width: 50px;
+        height: 50px;
+        margin-right: 15px;
+        border-radius: 50%;
+        vertical-align: top;
+    }
+    .info {
+        width: calc(100% - 100px);
+        display: inline-block;
+        .name {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+            h3 {
+                font-size: 18px;
+                font-weight: 600;
+                margin-right: 10px;
+                color: $heading-color;
+            }
+            .date {
+                font-size: 15px;
+                font-weight: 400;
+                color: $date-color;
+            }
+        }
+        p {
+            font-size: 15px;
+            font-weight: 500;
+            color: $text-color;
+            margin-bottom: 15px;
+        }
+        .action {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            img {
+                cursor: pointer;
+                &.down {
+                    margin-right: 20px;
+                }
+            }
+            .num {
+                color: $heading-color;
+                margin-left: 5px;
+                margin-right: 5px;
+                font-size: 15px;
+                font-weight: 600;
+            }
+            .reply, .report {
+                font-size: 15px;
+                font-weight: 400;
+                color: $text-color;
+                margin-right: 20px;
+                cursor: pointer;
+                transition: 3s ease-in-out;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
